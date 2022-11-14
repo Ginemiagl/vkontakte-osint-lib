@@ -31,8 +31,6 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
-      with:
-        php-version: '7.4'
 
     - name: Run tests script
       shell: bash
