@@ -32,13 +32,10 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-  runnig-test:
-    steps:
-      - name: Run tests script
-        shell: bash
-        run: ./run-tests.sh
-  running-success:
-    steps:
-      - name: Run codecov
-        shell: bash
-        run: bash <(curl -s https://codecov.io/bash)
+    - name: Run tests script
+      shell: bash
+      run: ./run-tests.sh
+
+    - name: Run codecov
+      shell: bash
+      run: bash <(curl -s https://codecov.io/bash)
