@@ -32,8 +32,13 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
-
-    # - name: Run test suite
-    #   run: composer run-script test
+  runnig-test:
+    steps:
+      - name: Run tests script
+        run: ./run-tests.sh
+        shell: bash
+  running-success:
+    steps:
+      - name: Run codecov
+        run: bash <(curl -s https://codecov.io/bash)
+        shell: bash
